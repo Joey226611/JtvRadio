@@ -1,19 +1,21 @@
-<script type="module">
-// Firebase import
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+// Firebase imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
+// Jouw config (die je stuurde)
 const firebaseConfig = {
-  apiKey: "JOUW_KEY",
-  authDomain: "JOUW_PROJECT.firebaseapp.com",
-  databaseURL: "https://JOUW_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "JOUW_PROJECT",
-  storageBucket: "JOUW_PROJECT.appspot.com",
-  messagingSenderId: "123456",
-  appId: "APP_ID"
+  apiKey: "AIzaSyDYzfeqkMwg8V0Ok_cXb1arqgEWcKVfbfM",
+  authDomain: "jtvradio.firebaseapp.com",
+  databaseURL: "https://jtvradio-default-rtdb.firebaseio.com", // 👈 BELANGRIJK TOEGEVOEGD
+  projectId: "jtvradio",
+  storageBucket: "jtvradio.firebasestorage.app",
+  messagingSenderId: "471273476911",
+  appId: "1:471273476911:web:e0d25926131212e6ec87da"
 };
 
+// Init
 const app = initializeApp(firebaseConfig);
-export const db = getDatabase(app);
-export { ref, set, onValue };
-</script>
+const db = getDatabase(app);
+
+// Export zodat andere files het kunnen gebruiken
+export { db, ref, set, onValue };
